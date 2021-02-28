@@ -9,18 +9,20 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var currentValue: Int = 0;
-    var targetValue: Int = 0;
+    var currentValue = 0;
+    var targetValue = 0;
     var score = 0;
+    var round = 0;
     @IBOutlet weak var slider : UISlider!
     @IBOutlet weak var targetValueLb: UILabel!
     @IBOutlet weak var scoreLb: UILabel!
+    @IBOutlet weak var roundLb: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let roundedValue = slider.value.rounded();
         currentValue = Int(roundedValue);
-        startNewRound();
+        startNewGame();
         
     }
     
@@ -37,22 +39,24 @@ class ViewController: UIViewController {
             tittle = "Perfect";
             score += 100;
         }
-            else if (difference < 5) && (difference != 0) {
-                tittle = "Good";
-                score += 50;
-            }
+        else if (difference < 5) && (difference != 0) {
+            tittle = "Good";
+            score += 50;
+        }
         
-    let message = "You scored \(points) points ";
-    let alert = UIAlertController(title: tittle, message: message , preferredStyle: .alert);
+        let message = "You scored \(points) points ";
+        let alert = UIAlertController(title: tittle, message: message , preferredStyle: .alert);
         
-        let action = UIAlertAction(title: "Awesome", style: .default, handler: nil);
+        let action = UIAlertAction(title: "Awesome", style: .default, handler:{
+            action in
+            self.startNewRound();
+        });
         
         alert.addAction(action);
         
         present(alert, animated: true, completion: nil);
         
         targetValue = Int.random(in: 1...100);
-        startNewRound();
         
     }
     @IBAction func SliderMoved(_ slider : UISlider){
@@ -62,11 +66,21 @@ class ViewController: UIViewController {
     
     func startNewRound(){
         targetValue = Int.random(in: 1...100);
+        currentValue = 50;
+        slider.value = Float(currentValue);
+        round += 1;
         updateLabels();
+        
     }
     func updateLabels(){
         targetValueLb.text = String(targetValue);
+        roundLb.text = String(round);
         scoreLb.text = String(score);
+    }
+    @IBAction func startNewGame(){
+        score = 0;
+        round = 0;
+        startNewRound();
     }
 }
 
