@@ -14,6 +14,7 @@
 		FA6425FC25E6DE8500368A3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6425FB25E6DE8500368A3B /* Assets.xcassets */; };
 		FA6425FF25E6DE8500368A3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6425FD25E6DE8500368A3B /* LaunchScreen.storyboard */; };
 		FA64260725EBCDD600368A3B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64260625EBCDD600368A3B /* AboutViewController.swift */; };
+		FA64260925EBF57A00368A3B /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = FA64260825EBF57A00368A3B /* BullsEye.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FA6425FE25E6DE8500368A3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA64260025E6DE8500368A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA64260625EBCDD600368A3B /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		FA64260825EBF57A00368A3B /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = BullsEye.html; path = "../../../../Downloads/5-06-web-views-and-developer-documentation-may2020/BullsEye.html"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				FA6425FD25E6DE8500368A3B /* LaunchScreen.storyboard */,
 				FA64260025E6DE8500368A3B /* Info.plist */,
 				FA64260625EBCDD600368A3B /* AboutViewController.swift */,
+				FA64260825EBF57A00368A3B /* BullsEye.html */,
 			);
 			path = Bullseye;
 			sourceTree = "<group>";
@@ -128,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6425FF25E6DE8500368A3B /* LaunchScreen.storyboard in Resources */,
+				FA64260925EBF57A00368A3B /* BullsEye.html in Resources */,
 				FA6425FC25E6DE8500368A3B /* Assets.xcassets in Resources */,
 				FA6425FA25E6DE8300368A3B /* Main.storyboard in Resources */,
 			);
