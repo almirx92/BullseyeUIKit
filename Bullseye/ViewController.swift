@@ -11,8 +11,10 @@ class ViewController: UIViewController {
     
     var currentValue: Int = 0;
     var targetValue: Int = 0;
+    var score = 0;
     @IBOutlet weak var slider : UISlider!
     @IBOutlet weak var targetValueLb: UILabel!
+    @IBOutlet weak var scoreLb: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +25,25 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showAlert(){
-        let alert = UIAlertController(title: "Hello there!", message: "This is the current value of the slider \(currentValue)" + "\n The target value is: \(targetValue)", preferredStyle: .alert);
+        
+        var tittle: String = "Awesome";
+        let difference = abs(targetValue - currentValue);
+        let points = 100 - difference;
+        
+        
+        score += points;
+        
+        if difference == 0 {
+            tittle = "Perfect";
+            score += 100;
+        }
+            else if (difference < 5) && (difference != 0) {
+                tittle = "Good";
+                score += 50;
+            }
+        
+    let message = "You scored \(points) points ";
+    let alert = UIAlertController(title: tittle, message: message , preferredStyle: .alert);
         
         let action = UIAlertAction(title: "Awesome", style: .default, handler: nil);
         
@@ -46,6 +66,7 @@ class ViewController: UIViewController {
     }
     func updateLabels(){
         targetValueLb.text = String(targetValue);
+        scoreLb.text = String(score);
     }
 }
 
